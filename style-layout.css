@@ -32,3 +32,10 @@ body {
   .clear {
     clear: both;
   }
+
+  /* Color Theme Swatches in Hex */
+.UI/UX-1-hex { color: #BF7EAE; }
+.UI/UX-2-hex { color: #985EBF; }
+.UI/UX-3-hex { color: #753FBF; }
+.UI/UX-4-hex { color: #6530D9; }
+.UI/UX-5-hex { color: #F2A950; }
