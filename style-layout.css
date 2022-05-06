@@ -1,39 +1,72 @@
 body {
-    font-family: Calibri;
-    width: 800px; 
-    margin: 20px auto; 
-    border: 1px solid #c3c3c3;
-  }
-  
-  header {
-    background-color: #f5f5f5;
-    padding: 10px;
-  }
-  
-  nav {
-    float: left;
-    width: 195px;
-  }
-  
-  section {
-    float: right;
-    width: 595px;
-  }
-  
-  footer {
-    background-color: #f5f5f5;
-    padding: 10px;
-  }
-  
-  article {
-    margin-right: 15px;
-  }
-  
-  .clear {
-    clear: both;
-  }
+  font-family: Calibri;
+  width:90%; 
+  margin: 20px auto; 
+  border: 1px solid #c3c3c3;
+}
 
-  /* Color Theme Swatches in Hex */
+header {
+  background-color: #BF7EAE;
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  float: left;
+  padding: 1em;
+}
+
+
+nav {
+  float: left;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #985EBF;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #753FBF;
+}
+
+section {
+  display:inline-block;
+
+}
+
+footer {
+  background-color: #F2A950;
+  padding: 10px;
+  text-align: center;
+}
+
+article {
+  margin-right: 15px;
+  word-wrap: break-word;
+}
+
+.clear {
+  clear: both;
+}
+
+/* Color Theme Swatches in Hex */
 .UI/UX-1-hex { color: #BF7EAE; }
 .UI/UX-2-hex { color: #985EBF; }
 .UI/UX-3-hex { color: #753FBF; }
