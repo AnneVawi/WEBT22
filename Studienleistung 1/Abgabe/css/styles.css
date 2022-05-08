@@ -275,12 +275,7 @@ header {
 	padding-right: 1.5rem;
 }
 
-.flyout:hover .flyout-links {
-	height: 35px;
-	transition: height 0.3s;
-}
-
-.flyout:active .flyout-links {
+.flyout:hover .flyout-links, .flyout:focus-within .flyout-links {
 	height: 35px;
 	transition: height 0.3s;
 }
