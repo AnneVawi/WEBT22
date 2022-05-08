@@ -19,6 +19,7 @@ body {
 h1,
 h2 {
 	font-size: 3rem;
+	padding: 0 1rem;
 	margin-top: 0;
 	text-transform: uppercase;
 	word-wrap: break-word;
@@ -111,13 +112,23 @@ footer a {
 
 footer {
 	margin: 0;
-	padding: 2em;
+	padding: 2rem;
 }
 
 footer a {
-	padding-left: 3em;
+	padding: 0;
 }
 
+@media (min-width: 600px) {
+	footer {
+		margin: 0;
+		padding: 2rem 3rem;
+	}
+
+	footer a {
+		padding: 0 1rem;
+	}
+}
 /* Section */
 
 section {
