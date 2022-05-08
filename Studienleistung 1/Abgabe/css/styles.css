@@ -40,9 +40,9 @@ a:hover {
 	text-decoration: underline;
 }
 
-/* Header */
+/* nav */
 
-header {
+nav {
 	display: flex;
 	flex-flow: wrap;
 	font-size: 0.9em;
@@ -51,15 +51,15 @@ header {
 	padding: 3rem 1rem;
 }
 
-header a,
-header div {
+nav a,
+nav div {
 	color: #fff;
 	padding-right: 0;
 	padding-top: 0.5em;
 	text-decoration: none;
 }
 
-header a.logo {
+nav a.logo {
 	padding: 0 0 1rem;
 	text-align: center;
 	width: 100%;
@@ -69,30 +69,34 @@ p {
 	padding: 0 1rem;
 }
 
+address {
+	padding: 0 1rem;
+}
+
 @media (min-width: 600px) and (max-width: 999px) {
-	header {
+	nav {
 		justify-content: flex-start;
 		padding: 3em;
 	}
 
-	header a {
+	nav a {
 		font-size: 1.2em;
 		padding-right: 1em;
 	}
 }
 
 @media (min-width: 999px) {
-	header {
+	nav {
 		justify-content: flex-start;
 		padding: 3em;
 	}
 
-	header a {
+	nav a {
 		font-size: 1em;
 		padding-right: 2em;
 	}
 
-	header a.logo {
+	nav a.logo {
 		text-align: left;
 		width: 15rem;
 	}
@@ -163,6 +167,9 @@ section {
 	background-color: #fff;
 	color: var(--primary-color-200);
 }
+.section-secondary a {
+	color: var(--primary-color-200);
+}
 
 .section-secondary h2 {
 	text-align: right;
@@ -206,6 +213,19 @@ section {
 }
 
 /* Hero  */
+
+header {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+@media (min-width: 600px) {
+	header {
+		padding: 0 2rem;
+	}
+}
+
 .hero p {
 	font-size: 2rem;
 	margin-bottom: 2rem;
@@ -258,6 +278,20 @@ section {
 .flyout:hover .flyout-links {
 	height: 35px;
 	transition: height 0.3s;
+}
+
+.flyout:active .flyout-links {
+	height: 35px;
+	transition: height 0.3s;
+}
+
+.flyout-open .flyout-links {
+	height: 35px;
+	transition: height 0.3s;
+}
+
+.nav-current {
+	text-decoration: underline;
 }
 
 /* some animations */

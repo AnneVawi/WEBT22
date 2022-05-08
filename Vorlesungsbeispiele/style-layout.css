@@ -1,41 +1,51 @@
 body {
-    font-family: Calibri;
-    width: 800px; 
-    margin: 20px auto; 
-    border: 1px solid #c3c3c3;
-  }
-  
-  header {
-    background-color: #f5f5f5;
-    padding: 10px;
-  }
-  
-  nav {
-    float: left;
-    width: 195px;
-  }
-  
-  section {
-    float: right;
-    width: 595px;
-  }
-  
-  footer {
-    background-color: #f5f5f5;
-    padding: 10px;
-  }
-  
-  article {
-    margin-right: 15px;
-  }
-  
-  .clear {
-    clear: both;
-  }
+	font-family: Calibri;
+	width: 800px;
+	margin: 20px auto;
+	border: 1px solid #c3c3c3;
+}
 
-  /* Color Theme Swatches in Hex */
-.UI/UX-1-hex { color: #BF7EAE; }
-.UI/UX-2-hex { color: #985EBF; }
-.UI/UX-3-hex { color: #753FBF; }
-.UI/UX-4-hex { color: #6530D9; }
-.UI/UX-5-hex { color: #F2A950; }
+nav {
+	background-color: #f5f5f5;
+	padding: 10px;
+}
+
+nav {
+	float: left;
+	width: 195px;
+}
+
+section {
+	float: right;
+	width: 595px;
+}
+
+footer {
+	background-color: #f5f5f5;
+	padding: 10px;
+}
+
+article {
+	margin-right: 15px;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Color Theme Swatches in Hex */
+.UI/UX-1-hex {
+	color: #bf7eae;
+}
+.UI/UX-2-hex {
+	color: #985ebf;
+}
+.UI/UX-3-hex {
+	color: #753fbf;
+}
+.UI/UX-4-hex {
+	color: #6530d9;
+}
+.UI/UX-5-hex {
+	color: #f2a950;
+}

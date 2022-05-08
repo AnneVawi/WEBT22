@@ -1,14 +1,14 @@
 <html lang="de">
 	<head>
-		<title>Design Demo | car:e</title>
+		<title>Home | car:e</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<header>
-			<a href="index.html" class="logo">
-				<svg height="40px" viewBox="0 0 489 119" xmlns="http://www.w3.org/2000/svg">
+		<nav>
+			<a href="index.html" class="logo" tabindex="-1">
+				<svg height="40px" viewBox="0 0 489 119" xmlns="http://www.w3.org/2000/svg" alt="car:e Logo">
 					<path
 						d="M103.048,43.065l-29.941,-0c-0.546,-4.17 -1.948,-7.93 -4.204,-11.279c-3.281,-4.512 -8.373,-6.767 -15.277,-6.767c-9.844,-0 -16.577,4.887 -20.2,14.662c-1.914,5.195 -2.871,12.099 -2.871,20.712c0,8.203 0.957,14.799 2.871,19.789c3.487,9.297 10.049,13.945 19.687,13.945c6.836,0 11.689,-1.846 14.56,-5.537c2.871,-3.691 4.614,-8.476 5.229,-14.355l29.838,0c-0.684,8.887 -3.896,17.294 -9.638,25.224c-9.16,12.783 -22.729,19.174 -40.707,19.174c-17.977,-0 -31.204,-5.332 -39.681,-15.996c-8.476,-10.663 -12.714,-24.505 -12.714,-41.526c-0,-19.208 4.682,-34.144 14.047,-44.808c9.365,-10.664 22.285,-15.995 38.758,-15.995c14.014,-0 25.48,3.144 34.401,9.433c8.92,6.289 14.201,17.397 15.842,33.324Z"
 						style="fill: #fff; fill-rule: nonzero"
@@ -31,9 +31,9 @@
 					/>
 				</svg>
 			</a>
-			<a href="index.html">Home</a>
+			<a href="index.html" tabindex="1" class="nav-current">Home</a>
 			<div class="flyout">
-				<a class="flyout-link" href="./Inhaltsseite1.html"
+				<a class="flyout-link" href="./Inhaltsseite1.html" tabindex="1"
 					>Preise & Autos
 					<svg height="16px" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
 						<!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -43,13 +43,13 @@
 					</svg>
 				</a>
 				<div class="flyout-links">
-					<a href="./Unterseite1.html">Newsletter</a>
-					<a href="./Unterseite2.html">Nachhaltigkeit</a>
+					<a href="./Unterseite1.html" tabindex="2">Newsletter</a>
+					<a href="./Unterseite2.html" tabindex="3">Nachhaltigkeit</a>
 				</div>
 			</div>
-			<a href="./Inhaltsseite2.html">Standorte</a>
-		</header>
-		<section class="hero">
+			<a href="./Inhaltsseite2.html" tabindex="4">Standorte</a>
+		</nav>
+		<header class="hero" tabindex="5">
 			<div class="grid-50">
 				<h1>Nachhaltigkeit</h1>
 				<p>
@@ -63,6 +63,7 @@
 						viewBox="0 0 253 107"
 						xmlns="http://www.w3.org/2000/svg"
 						style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2"
+						alt="Auto"
 					>
 						<path
 							d="M252.03,51.758c-2.574,-17.516 -34.402,-26.905 -63.578,-27.017c-43.303,-31.677 -96.95,-32.943 -159.472,-3.758l-18.838,3.142c-5.876,0.978 -10.142,6.013 -10.142,11.971l0,28.075c0,2.91 1.047,5.725 2.944,7.923l6.54,7.585c2.307,2.678 5.657,4.212 9.192,4.212l6.117,0c2.414,12.722 13.598,22.376 27.011,22.376c13.415,0 24.599,-9.654 27.013,-22.376l101.784,0c2.414,12.722 13.598,22.376 27.014,22.376c13.416,0 24.599,-9.654 27.014,-22.376l5.304,0c6.691,0 12.139,-5.444 12.139,-12.138l0,-19.393l-0.042,-0.602Zm-11.954,-4.986l-3.705,0l-2.403,-4.22c2.431,1.324 4.517,2.733 6.108,4.22Zm-66.648,-22.028l-85.472,0l-6.713,-13.169c34.615,-7.431 65.104,-3.042 92.185,13.169Zm-121.622,73.213c-10.587,0 -19.199,-8.613 -19.199,-19.197c-0,-10.587 8.612,-19.199 19.199,-19.199c10.587,0 19.2,8.612 19.2,19.199c-0,10.584 -8.613,19.197 -19.2,19.197Zm155.812,0c-10.587,0 -19.2,-8.613 -19.2,-19.197c-0,-10.587 8.613,-19.199 19.2,-19.199c10.587,0 19.199,8.612 19.199,19.199c-0,10.584 -8.612,19.197 -19.199,19.197Zm32.315,-22.376l-5.005,0c-1.582,-13.676 -13.217,-24.333 -27.31,-24.333c-14.094,0 -25.728,10.657 -27.311,24.333l-101.19,0c-1.582,-13.676 -13.217,-24.333 -27.311,-24.333c-14.093,0 -25.728,10.657 -27.31,24.333l-5.82,0c-1.115,0 -2.171,-0.484 -2.899,-1.327l-6.54,-7.588c-0.597,-0.691 -0.927,-1.576 -0.927,-2.492l-0,-18.119l4.534,0c2.297,0 4.157,-1.859 4.157,-4.156c-0,-2.297 -1.86,-4.156 -4.157,-4.156l-4.534,0l-0,-1.647c-0,-1.88 1.344,-3.468 3.198,-3.776l19.965,-3.327l0.518,-0.244c14.247,-6.685 27.879,-11.727 40.945,-15.172l8.744,17.155l15.863,32.568c0.72,1.476 2.199,2.336 3.74,2.336c0.61,0 1.229,-0.135 1.817,-0.42c2.064,-1.006 2.921,-3.493 1.916,-5.557l-12.962,-26.605l93.65,0l0.011,0.008l1.395,-0.008c12.52,-0.112 24.642,1.63 34.453,4.526l8.778,15.405c0.742,1.296 2.117,2.097 3.61,2.097l9.808,0l-0,16.671c0.003,2.111 -1.714,3.828 -3.826,3.828Z"
@@ -87,8 +88,8 @@
 					</svg>
 				</div>
 			</div>
-		</section>
-		<section class="section-secondary">
+		</header>
+		<section class="section-secondary" tabindex="6">
 			<div class="row">
 				<div class="grid-50">
 					<p>
@@ -104,75 +105,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section-primary">
-			<div class="row">
-				<div class="grid-33">
-					<h2>Yes, We care!</h2>
-				</div>
-				<div class="grid-33">
-					<p>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-						sea takimata sanctus est Lorem ipsum dolor sit amet.
-					</p>
-				</div>
-				<div class="grid-33">
-					<p>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-						sea takimata sanctus est Lorem ipsum dolor sit amet.
-					</p>
-				</div>
-				<div class="grid-33">
-					<p>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-						sea takimata sanctus est Lorem ipsum dolor sit amet.
-					</p>
-				</div>
-				<div class="grid-33">
-					<p>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-						sea takimata sanctus est Lorem ipsum dolor sit amet.
-					</p>
-				</div>
-				<div class="grid-33">
-					<p>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-						sea takimata sanctus est Lorem ipsum dolor sit amet.
-					</p>
-				</div>
-			</div>
-		</section>
-		<section class="section-secondary">
-			<div class="row">
-				<div class="grid-50">
-					<p>
-						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-						sea takimata sanctus est Lorem ipsum dolor sit amet.
-					</p>
-				</div>
-				<div class="grid-50">
-					<h2>Yes, We care!</h2>
-				</div>
-			</div>
-		</section>
-		<section class="section-primary">
+		<section class="section-primary" tabindex="7">
 			<div class="row">
 				<div class="grid-33">
 					<h2>Yes, We care!</h2>
@@ -195,8 +128,76 @@
 						sea takimata sanctus est Lorem ipsum dolor sit amet.
 					</p>
 				</div>
+				<div class="grid-33">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+						sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div class="grid-33">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+						sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div class="grid-33">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+						sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
 			</div>
 		</section>
-		<footer><a href="./impressum.html">Impressum</a></footer>
+		<section class="section-secondary" tabindex="8">
+			<div class="row">
+				<div class="grid-50">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+						sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div class="grid-50">
+					<h2>Yes, We care!</h2>
+				</div>
+			</div>
+		</section>
+		<section class="section-primary" tabindex="9">
+			<div class="row">
+				<div class="grid-33">
+					<h2>Yes, We care!</h2>
+				</div>
+				<div class="grid-33">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+						sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+				<div class="grid-33">
+					<p>
+						Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+						sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+						ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+						dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no
+						sea takimata sanctus est Lorem ipsum dolor sit amet.
+					</p>
+				</div>
+			</div>
+		</section>
+		<footer><a href="./impressum.html" tabindex="10">Impressum</a></footer>
 	</body>
 </html>
