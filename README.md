@@ -49,3 +49,28 @@
 2. Funktionen und Inhalt
 
 ## -> Montag 17:00 nächster Termin
+
+<br><br><br><br><br>
+
+# Termin 2
+
+## Content
+
+-   Home
+    -   Bild/Piktogramm mit Firmennamen (+Video mp4)
+-   Preise & Autos
+    -   Unsere Preise/Autos (+Fotos)
+-   Über Uns
+    -   Standorte
+    -   U1: Registrierung für Go-Live Newsletter
+    -   U2: Nachhaltigkeit
+
+## Aufteilung
+
+Anne: Preise/Autos, Nachhaltigkeit
+
+Hendrik: Standorte
+
+Lennart: Home
+
+## -> Donnerstag 17:00 nächster Termin
