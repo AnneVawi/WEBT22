@@ -303,6 +303,7 @@ header {
   position: relative;
 }
 
+
 .flyout-links {
   height: 0;
   margin-right: 4rem;
@@ -310,7 +311,15 @@ header {
   position: absolute;
   transition: height 0.3s;
   white-space: nowrap;
+  right:0;
 }
+
+@media (min-width: 600px) {
+  .flyout-links {
+    left:0;
+  }
+}
+
 
 .flyout-links > a {
   padding-right: 1.5rem;
