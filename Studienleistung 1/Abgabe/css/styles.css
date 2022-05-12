@@ -306,7 +306,7 @@ header {
 
 .flyout-links {
   height: 0;
-  margin-right: 4rem;
+
   overflow: hidden;
   position: absolute;
   transition: height 0.3s;
@@ -314,16 +314,12 @@ header {
   right:0;
 }
 
-@media (min-width: 600px) {
-  .flyout-links {
-    left:0;
-  }
-}
-
-
 .flyout-links > a {
-  padding-right: 1.5rem;
+  padding-left: 1.5rem;
 }
+
+
+
 
 .flyout:hover .flyout-links,
 .flyout:focus-within .flyout-links {
