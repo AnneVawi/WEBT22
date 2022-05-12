@@ -74,3 +74,23 @@ Hendrik: Standorte
 Lennart: Home
 
 ## -> Donnerstag 17:00 nächster Termin
+
+<br><br><br><br><br>
+
+# Termin 3
+
+style svg (+style nochmal fixen) <- Hendrik
+
+alt <- Anne
+
+tabindex <- Lennart
+
+footer content <- Lennart
+
+code validierung <- Anne
+
+readme schreiben - chrome getestet <- Lennart
+
+==> to do bis sonntag 12:00
+
+abgeben <- Lennart
