@@ -220,12 +220,12 @@ section {
 }
 
 .section-primary:before {
-  top: -2px;
+  top: -7px;
   transform: rotate(180deg);
 }
 
 .section-primary:after {
-  bottom: -2px;
+  bottom: -7px;
 }
 
 .hero > div:first-child {
@@ -303,7 +303,7 @@ header {
 
 
 .hero:after {
-  bottom: -3px;
+  bottom: -7px;
   margin-left: 0;
   content: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 990 93"><path d="M990,19.838c-22.436,0.038 -63.4,10.124 -113.707,5.447c-99.793,-9.277 -182.038,-30.893 -327.549,-15.479c-164.377,20.627 -223.106,23.651 -322.238,6.741c-76.945,-13.124 -152.861,-10.352 -226.506,-16.547l0,92.531l990,-0l0,-72.693Z"/></svg>');
 }
