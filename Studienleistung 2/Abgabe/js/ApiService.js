@@ -27,4 +27,22 @@ class ApiService {
 	}
 
 	// ... hier folgen die Sortierfunktionen...
+
+	sortByTime() {
+		this.currentData.sort((a, b) => {
+			return new Date(`1970-01-01T${b.time}.000Z`) - new Date(`1970-01-01T${a.time}.000Z`);
+		});
+	}
+
+	sortByTitle() {
+		this.currentData.sort((a, b) => {
+			return b.title.localeCompare(a.title);
+		});
+	}
+
+	sortByDay() {
+		this.currentData.sort((a, b) => {
+			return new Date(`${b.date}T00:00:00.000Z`) - new Date(`${a.date}T00:00:00.000Z`);
+		});
+	}
 }
