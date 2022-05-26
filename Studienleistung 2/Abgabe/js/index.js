@@ -4,6 +4,15 @@
 
 	//register listener functions
 
+	//mehr anzeigen
+	const buttonShowMore = document.querySelector('#button-showmore');
+	buttonShowMore.addEventListener('click', () => {
+		apiService.currentDisplayAmount += 10;
+		const mainDiv = document.querySelector('#main');
+		mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
+	});
+
+	//sortieren
 	const sortSelector = document.querySelector('#select-sort');
 	sortSelector.addEventListener('change', () => {
 		switch (sortSelector.value) {
@@ -20,7 +29,7 @@
 				throw new Error(`unexpected selection from sortSelector: ${sortSelector.value}`);
 		}
 		const mainDiv = document.querySelector('#main');
-		mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, 10));
+		mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
 	});
 
 	//initial loading
@@ -33,5 +42,5 @@
 		mainDiv.innerHTML = layoutService.getErrorMessage();
 		return;
 	}
-	mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, 10));
+	mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
 })();
