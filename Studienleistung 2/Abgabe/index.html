@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Newsletter</title>
+		<title>Schlagzeilen</title>
 		<script src="js/ApiService.js"></script>
 		<script src="js/LayoutService.js"></script>
 		<script src="js/index.js" defer></script>
@@ -12,7 +12,15 @@
 	</head>
 	<body>
 		<header>
-			<h1>My Newsletter</h1>
+			<h1>Schlagzeilen</h1>
+			<select name="sort" id="select-tag">
+				<option value="" disabled selected>Nach Kategorie filtern</option>
+				<option value="all">Keine</option>
+				<option value="politics">Politik</option>
+				<option value="economy">Wirtschaft</option>
+				<option value="health">Gesundheit</option>
+				<option value="society">Kultur</option>
+			</select>
 			<select name="sort" id="select-sort">
 				<option value="" disabled selected>Sortieren nach...</option>
 				<option value="TIME">Uhrzeit</option>
@@ -21,6 +29,7 @@
 			</select>
 		</header>
 		<div id="main"></div>
+		<br>
 		<button id="button-showmore">Weitere Laden</button>
 	</body>
 </html>
