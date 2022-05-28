@@ -1,0 +1,76 @@
+
+body {
+  margin: 0 auto;
+  background-color: rgb(0, 109, 145);
+  color: white;
+  display: grid;
+  padding: 1rem;
+  hyphens: auto;
+  max-width: 1000px;
+}
+
+header {
+  padding: 1rem;
+  border-bottom: 1px solid white;
+}
+
+
+article {
+  padding: 1rem;
+  border-bottom: 1px solid white;
+}
+
+h1 {
+  font-size: 5rem;
+  text-align: right;
+}
+
+h2 {
+  font-size: 3rem;
+  text-align: right;
+}
+
+p {
+  font-size: 2rem;
+  text-align: right;
+}
+
+.kicker {
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+a {
+  font-size: 2rem;
+  color: white;
+  opacity: 0.7;
+}
+
+a:hover {
+  color: #c4c4c4;
+}
+
+select {
+  padding: 1rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  background-color: inherit;
+  border: thin solid white;
+  color: white;
+}
+
+button {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: inherit;
+  border: thin solid white;
+  color: white;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+button:hover {
+  background-color: rgba(176, 185, 190, 0.35);
+  cursor: pointer;
+}
+

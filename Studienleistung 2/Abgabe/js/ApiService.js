@@ -36,7 +36,7 @@ class ApiService {
 
 	sortByTitle() {
 		this.currentData.sort((a, b) => {
-			return b.title.localeCompare(a.title);
+			return a.title.localeCompare(b.title);
 		});
 	}
 
