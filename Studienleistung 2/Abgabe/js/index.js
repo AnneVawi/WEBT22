@@ -62,6 +62,21 @@
 			return;
 		}
 
+		const sortSelector = document.querySelector('#select-sort');
+
+		switch (sortSelector.value) {
+			case 'TIME':
+				apiService.sortByTime();
+				break;
+			case 'TITLE':
+				apiService.sortByTitle();
+				break;
+			case 'TAG':
+				apiService.sortByTag();
+				break;
+			default:
+				throw new Error(`unexpected selection from sortSelector: ${sortSelector.value}`);
+		}
 		mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
 	});
 
