@@ -18,3 +18,13 @@ Hendrik: Design
 Lennart: Sortierung, mehr laden
 
 ## Nächster Termin: 30.05.22 17:00
+
+## Termin 2:
+
+Fehlende Dinge:
+
+-   Geladene Tags verwenden <- Anne
+-   Nav der kleben bleibt <- Hendrik
+-   Sortieren nachdem Tag geladen wird <- Lennart
+
+## Nächster Termin: 02.06.22 17:00
