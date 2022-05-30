@@ -10,7 +10,10 @@ body {
 
 header {
 	padding: 1rem;
+	background-color: rgb(0, 109, 145);
 	border-bottom: 1px solid white;
+	position: sticky;
+	top: 0;
 }
 
 article {
@@ -19,8 +22,9 @@ article {
 }
 
 h1 {
-	font-size: 5rem;
-	text-align: right;
+	font-size: 3rem;
+	float:right;
+	line-height: 0;
 }
 
 h2 {
@@ -35,17 +39,16 @@ p {
 
 .kicker {
 	text-transform: uppercase;
-	opacity: 0.7;
+	color: rgb(180, 219, 232);
 }
 
 a {
 	font-size: 2rem;
-	color: white;
-	opacity: 0.7;
+	color: rgb(180, 219, 232);
 }
 
 a:hover {
-	color: #c4c4c4;
+	color: rgb(211, 235, 246);
 }
 
 select {
