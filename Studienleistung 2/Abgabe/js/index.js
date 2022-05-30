@@ -22,8 +22,8 @@
 			case 'TITLE':
 				apiService.sortByTitle();
 				break;
-			case 'DAY':
-				apiService.sortByDay();
+			case 'TAG':
+				apiService.sortByTag();
 				break;
 			default:
 				throw new Error(`unexpected selection from sortSelector: ${sortSelector.value}`);
@@ -35,29 +35,34 @@
 	//tags
 	const tagSelector = document.querySelector('#select-tag');
 	tagSelector.addEventListener('change', async () => {
-		switch (tagSelector.value) {
-			case 'all':
-				await apiService.getAllNews();
-				break;
-			case 'politics':
-				await apiService.getNewsByTag('politics');
-				break;
-			case 'economy':
-				await apiService.getNewsByTag('economy');
-				break;
-			case 'health':
-				await apiService.getNewsByTag('health');
-				break;
-			case 'society':
-				await apiService.getNewsByTag('society');
-				break;
-			default:
-				throw new Error(`unexpected selection: ${tagSelector.value}`);
+		const mainDiv = document.querySelector('#main');
+		mainDiv.innerHTML = layoutService.getLoadingSpinner();
+		try {
+			switch (tagSelector.value) {
+				case 'all':
+					await apiService.getAllNews();
+					break;
+				case 'politics':
+					await apiService.getNewsByTag('politics');
+					break;
+				case 'economy':
+					await apiService.getNewsByTag('economy');
+					break;
+				case 'health':
+					await apiService.getNewsByTag('health');
+					break;
+				case 'society':
+					await apiService.getNewsByTag('society');
+					break;
+				default:
+					throw new Error(`unexpected selection: ${tagSelector.value}`);
+			}
+		} catch (e) {
+			mainDiv.innerHTML = layoutService.getErrorMessage();
+			return;
 		}
 
-		const mainDiv = document.querySelector('#main');
 		mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
-
 	});
 
 	//initial loading
@@ -71,6 +76,4 @@
 		return;
 	}
 	mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
-
 })();
-

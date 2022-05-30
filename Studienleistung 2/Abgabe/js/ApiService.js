@@ -36,13 +36,15 @@ class ApiService {
 
 	sortByTitle() {
 		this.currentData.sort((a, b) => {
+			//hier wurde bewusst aufsteigend gewählt
 			return a.title.localeCompare(b.title);
 		});
 	}
 
-	sortByDay() {
+	sortByTag() {
 		this.currentData.sort((a, b) => {
-			return new Date(`${b.date}T00:00:00.000Z`) - new Date(`${a.date}T00:00:00.000Z`);
+			//hier wurde bewusst aufsteigend gewählt
+			return a.tag.localeCompare(b.tag);
 		});
 	}
 }
