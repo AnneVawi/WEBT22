@@ -35,7 +35,10 @@ class LayoutService {
 	}
 
 	getSelectorItems(tags) {
-		let string = '<option value="" disabled selected>Nach Kategorie filtern</option>\n';
+		let string = `
+			<option value="" disabled selected>Nach Kategorie filtern</option>\n
+			<option value="none">Keine</option>\n
+		`;
 		tags.forEach(tag => {
 			string = string + this.getSelectorItem(tag) + "\n";
 		});

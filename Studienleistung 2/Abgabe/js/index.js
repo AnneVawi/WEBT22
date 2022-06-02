@@ -40,24 +40,11 @@
 		const mainDiv = document.querySelector('#main');
 		mainDiv.innerHTML = layoutService.getLoadingSpinner();
 		try {
-			switch (tagSelector.value) {
-				case 'all':
-					await apiService.getAllNews();
-					break;
-				case 'politics':
-					await apiService.getNewsByTag('politics');
-					break;
-				case 'economy':
-					await apiService.getNewsByTag('economy');
-					break;
-				case 'health':
-					await apiService.getNewsByTag('health');
-					break;
-				case 'society':
-					await apiService.getNewsByTag('society');
-					break;
-				default:
-					throw new Error(`unexpected selection: ${tagSelector.value}`);
+			if (tagSelector.value === 'none') {
+				await apiService.getAllNews();
+				
+			} else {
+				await apiService.getNewsByTag(tagSelector.value);
 			}
 
 			mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
