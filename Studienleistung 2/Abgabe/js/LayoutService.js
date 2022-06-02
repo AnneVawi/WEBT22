@@ -29,4 +29,17 @@ class LayoutService {
 		}
 		return newsItmems.map(this.getNewsListItem).join('\n');
 	}
+
+	getSelectorItem(tag) {
+		return `<option value="${tag}">${tag[0].toUpperCase()}${tag.slice(1)}</option>`;
+	}
+
+	getSelectorItems(tags) {
+		let string = '<option value="" disabled selected>Nach Kategorie filtern</option>\n';
+		tags.forEach(tag => {
+			string = string + this.getSelectorItem(tag) + "\n";
+		});
+		return string;
+	}
+
 }

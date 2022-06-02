@@ -34,6 +34,8 @@
 
 	//tags
 	const tagSelector = document.querySelector('#select-tag');
+
+
 	tagSelector.addEventListener('change', async () => {
 		const mainDiv = document.querySelector('#main');
 		mainDiv.innerHTML = layoutService.getLoadingSpinner();
@@ -57,21 +59,7 @@
 				default:
 					throw new Error(`unexpected selection: ${tagSelector.value}`);
 			}
-			const sortSelector = document.querySelector('#select-sort');
 
-			switch (sortSelector.value) {
-				case 'TIME':
-					apiService.sortByTime();
-					break;
-				case 'TITLE':
-					apiService.sortByTitle();
-					break;
-				case 'TAG':
-					apiService.sortByTag();
-					break;
-				default:
-					throw new Error(`unexpected selection from sortSelector: ${sortSelector.value}`);
-			}
 			mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
 		} catch (e) {
 			mainDiv.innerHTML = layoutService.getErrorMessage();
@@ -82,12 +70,19 @@
 	//initial loading
 
 	const mainDiv = document.querySelector('#main');
+
 	mainDiv.innerHTML = layoutService.getLoadingSpinner();
 	try {
 		await Promise.all([apiService.getAllNews(), apiService.getAllTags()]);
+
 	} catch (e) {
+
 		mainDiv.innerHTML = layoutService.getErrorMessage();
 		return;
 	}
+
+	tagSelector.innerHTML = layoutService.getSelectorItems(apiService.tags);
+
 	mainDiv.innerHTML = layoutService.getNewsList(apiService.currentData.slice(0, apiService.currentDisplayAmount));
+
 })();
