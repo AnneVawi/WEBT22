@@ -35,7 +35,6 @@
 	//tags
 	const tagSelector = document.querySelector('#select-tag');
 
-
 	tagSelector.addEventListener('change', async () => {
 		const mainDiv = document.querySelector('#main');
 		mainDiv.innerHTML = layoutService.getLoadingSpinner();
