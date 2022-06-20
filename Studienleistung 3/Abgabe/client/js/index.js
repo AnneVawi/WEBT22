@@ -25,4 +25,52 @@ async function loadDataFromServer() {
 	return Array.from(moduleMap.values());
 }
 
-loadDataFromServer().then(console.log);
+function drawPieChart(data) {
+	const svg = d3.select('svg');
+	const width = svg.attr('width');
+	const height = svg.attr('height');
+	const radius = 200;
+
+	const ordinalScale = d3.scaleOrdinal().domain(data).range(['#4FE07C', '#E0C031', '#E0771B', '#E00804', '#1012E0', '#2FE0D6']);
+
+	const tooltip = d3.select('.container').append('div').attr('class', 'tooltip');
+	tooltip.append('p').attr('class', 'label');
+
+	const pieChart = svg
+		.append('g')
+		.attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')')
+		.selectAll('arc')
+		.data(
+			d3.pie().value((d) => {
+				return d.amount;
+			})(data)
+		)
+		.enter();
+
+	pieChart
+		.append('path')
+		.attr('d', d3.arc().outerRadius(radius).innerRadius(0))
+		.attr('fill', (d) => {
+			return ordinalScale(d.data.acronym);
+		})
+		.on('mouseover', (_, data) => {
+			tooltip.select('.label').html(data.data.title);
+			tooltip.style('display', 'block');
+		})
+		.on('mouseout', () => {
+			tooltip.style('display', 'none');
+		});
+
+	pieChart
+		.append('text')
+		.attr('transform', (d) => {
+			return 'translate(' + d3.arc().outerRadius(radius).innerRadius(0).centroid(d) + ')';
+		})
+		.text((d) => {
+			return d.data.acronym;
+		})
+		.style('font-family', 'arial')
+		.style('font-size', 15);
+}
+
+loadDataFromServer().then(drawPieChart);
