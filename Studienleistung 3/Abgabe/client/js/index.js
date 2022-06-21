@@ -1,76 +1,117 @@
-async function loadDataFromServer() {
-	const moduleGroupsResponse = await fetch('http://localhost:3000/module_groups', { mode: 'cors' });
-	const moduleGroups = await moduleGroupsResponse.json();
+class PieChart {
 
-	const modulesResponse = await fetch('http://localhost:3000/modules', { mode: 'cors' });
-	const modules = await modulesResponse.json();
+    loadDataFromServer = async () => {
+        const moduleGroupsResponse = await fetch('http://localhost:3000/module_groups', {mode: 'cors'});
+        const moduleGroups = await moduleGroupsResponse.json();
 
-	const moduleMap = new Map();
+        const modulesResponse = await fetch('http://localhost:3000/modules', {mode: 'cors'});
+        const modules = await modulesResponse.json();
 
-	moduleGroups.forEach((group) => {
-		moduleMap.set(group.acronym, {
-			acronym: group.acronym,
-			title: `Modulgruppe ${group.acronym}: ${group.title}`,
-			amount: 0
-		});
-	});
+        const moduleMap = new Map();
 
-	modules.forEach((module) => {
-		const item = moduleMap.get(module.moduleGroup);
-		if (item == null) return;
-		item.amount += 1;
-		moduleMap.set(item.acronym, item);
-	});
+        moduleGroups.forEach((group) => {
+            moduleMap.set(group.acronym, {
+                acronym: group.acronym,
+                title: `Modulgruppe ${group.acronym}: ${group.title}`,
+                amount: 0
+            });
+        });
 
-	return Array.from(moduleMap.values());
+        modules.forEach((module) => {
+            const item = moduleMap.get(module.moduleGroup);
+            if (item == null) return;
+            item.amount += 1;
+            moduleMap.set(item.acronym, item);
+        });
+
+        return Array.from(moduleMap.values());
+    }
+
+    drawPieChart = (data) => {
+        const svg = d3.select('#pie-chart');
+        const width = 400;
+        const height = 400;
+        const radius = 200;
+        const ordinalScale = d3.scaleOrdinal().domain(data).range(['#4FE07C', '#E0C031', '#E0771B', '#E00804', '#1012E0', '#2FE0D6']);
+
+        const tooltip = svg.append('div').attr('class', 'd3-tooltip');
+        tooltip.append('p').attr('class', 'label');
+
+        const pieChart = svg
+            .append("svg")
+            .attr("viewBox", `0 0 ${width} ${height}`)
+            .append('g')
+            .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')')
+            .selectAll('arc')
+            .data(
+                d3.pie().value((d) => {
+                    return d.amount;
+                })(data)
+            )
+            .enter();
+
+        pieChart
+            .append('path')
+            .attr('d', d3.arc().outerRadius(radius).innerRadius(0))
+            .attr('fill', (d) => {
+                return ordinalScale(d.data.acronym);
+            })
+            .on('mousemove', (e, data) => {
+                tooltip.select('.label').html(data.data.title + "<br>" + data.data.amount + " Modul(e)");
+                tooltip
+                    .style('display', 'block')
+                    .style("left", e.pageX + "px")
+                    .style("top", e.pageY + "px")
+            })
+            .on('mouseout', () => {
+                tooltip.style('display', 'none');
+            });
+
+        pieChart
+            .append('text')
+            .attr('transform', (d) => {
+                return 'translate(' + d3.arc().outerRadius(radius).innerRadius(0).centroid(d) + ')';
+            })
+            .text((d) => {
+                return d.data.acronym;
+            })
+            .style('font-family', 'arial')
+            .style('font-size', 15);
+    }
 }
 
-function drawPieChart(data) {
-	const svg = d3.select('svg');
-	const width = svg.attr('width');
-	const height = svg.attr('height');
-	const radius = 200;
+class Nav {
 
-	const ordinalScale = d3.scaleOrdinal().domain(data).range(['#4FE07C', '#E0C031', '#E0771B', '#E00804', '#1012E0', '#2FE0D6']);
+    links = document.getElementsByClassName("nav-link")
+    pieChart = new PieChart()
 
-	const tooltip = d3.select('.container').append('div').attr('class', 'tooltip');
-	tooltip.append('p').attr('class', 'label');
+    init = () => {
+        this.loadTemplate(this.links[0])
+        for (let link of this.links) {
+            link.addEventListener("click", () => {
+                this.loadTemplate(link)
+            });
+        }
+    }
 
-	const pieChart = svg
-		.append('g')
-		.attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')')
-		.selectAll('arc')
-		.data(
-			d3.pie().value((d) => {
-				return d.amount;
-			})(data)
-		)
-		.enter();
+    loadTemplate = (link) => {
+        const content = document.getElementById("content");
+        content.innerHTML = document.getElementById(link.id + "-template").innerHTML;
 
-	pieChart
-		.append('path')
-		.attr('d', d3.arc().outerRadius(radius).innerRadius(0))
-		.attr('fill', (d) => {
-			return ordinalScale(d.data.acronym);
-		})
-		.on('mouseover', (_, data) => {
-			tooltip.select('.label').html(data.data.title);
-			tooltip.style('display', 'block');
-		})
-		.on('mouseout', () => {
-			tooltip.style('display', 'none');
-		});
+        if (link.id === 'pie-link') {
 
-	pieChart
-		.append('text')
-		.attr('transform', (d) => {
-			return 'translate(' + d3.arc().outerRadius(radius).innerRadius(0).centroid(d) + ')';
-		})
-		.text((d) => {
-			return d.data.acronym;
-		})
-		.style('font-family', 'arial')
-		.style('font-size', 15);
+            this.pieChart.loadDataFromServer().then(this.pieChart.drawPieChart);
+        }
+        this.resetActive()
+        link.classList.add("active")
+    }
+
+    resetActive = () => {
+        for (let link of this.links) {
+            link.classList.remove("active")
+        }
+    }
+
 }
 
-loadDataFromServer().then(drawPieChart);
+new Nav().init();
