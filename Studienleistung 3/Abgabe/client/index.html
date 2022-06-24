@@ -1,75 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-  />
-  <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-  ></script>
-  <script src="./js/index.js" defer></script>
-  <title>Frontend</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+			crossorigin="anonymous"
+		/>
+		<script src="https://d3js.org/d3.v7.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+			crossorigin="anonymous"
+		></script>
+		<script src="./js/index.js" defer></script>
+		<title>Frontend</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
+			<div class="container-fluid">
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbar-sl3"
+					aria-controls="navbar-sl3"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Tenth navbar example">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-sl3" aria-controls="navbar-sl3" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+				<div class="collapse navbar-collapse justify-content-md-center" id="navbar-sl3">
+					<ul class="navbar-nav">
+						<li class="nav-item"><a href="#" class="nav-link active" id="pie-link">Pie Chart</a></li>
+						<li class="nav-item"><a href="#" class="nav-link" id="imprint-link">Impressum</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbar-sl3">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a href="#" class="nav-link active" id="pie-link">Pie Chart</a></li>
-        <li class="nav-item"><a href="#" class="nav-link" id="imprint-link">Impressum</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div id="content"></div>
+				</div>
+			</div>
+		</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div id="content">
-      </div>
-    </div>
-  </div>
-</div>
-
-<template id="pie-link-template">
-  <style>
-    .d3-tooltip {
-      display: none;
-      position: absolute;
-      text-align: center;
-      width: 180px;
-      background: white;
-      border: black solid 1px;
-      pointer-events: none;
-    }
-  </style>
-  <h1 class="mt-5 mb-5">Pie Chart</h1>
-  <div id="pie-chart"></div>
-</template>
-<template id="imprint-link-template">
-  <h1 class="mt-5 mb-5">Impressum</h1>
-  <p>Angaben gemäß § 5 TMG:</p>
-  <address>
-    Peter Mustermann<br>
-    Musterstraße 23<br>
-    12345 Musterstadt<br>
-  </address>
-  <a href="mailto:test@mustermann.de">test@mustermann.de</a><br>
-  <a href="tel:+4912345362736352">01234 - 5362-7363-52</a>
-</template>
-</body>
+		<template id="pie-link-template">
+			<!-- Hier wurde absichtlich keine externe CSS Datei verwendet, da es uns für die eine Klasse nicht sinnvoll erschien. -->
+			<style>
+				.d3-tooltip {
+					display: none;
+					position: absolute;
+					text-align: center;
+					width: 180px;
+					background: white;
+					border: black solid 1px;
+					pointer-events: none;
+				}
+			</style>
+			<h1 class="mt-5 mb-5">Pie Chart</h1>
+			<div id="pie-chart"></div>
+		</template>
+		<template id="imprint-link-template">
+			<h1 class="mt-5 mb-5">Impressum</h1>
+			<p>Angaben gemäß § 5 TMG:</p>
+			<address>
+				Peter Mustermann<br />
+				Musterstraße 23<br />
+				12345 Musterstadt<br />
+			</address>
+			<a href="mailto:test@mustermann.de">test@mustermann.de</a><br />
+			<a href="tel:+4912345362736352">01234 - 5362-7363-52</a>
+		</template>
+	</body>
 </html>
