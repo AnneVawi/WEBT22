@@ -1,7 +1,13 @@
 <script>
 	import { Router, Link, Route } from "svelte-navigator";
-import MainScreen from "./screens/MainScreen.svelte";
-import SettingsScreen from "./screens/SettingsScreen.svelte";
+	import MainScreen from "./screens/MainScreen.svelte";
+	import SettingsScreen from "./screens/SettingsScreen.svelte";
+	import {store} from './datalayer/Store';
+	import { onMount } from "svelte";
+
+	onMount(async () => {
+		await store.init()
+	});
 </script>
 
 <Router>
@@ -11,7 +17,7 @@ import SettingsScreen from "./screens/SettingsScreen.svelte";
 	</nav>
 	<div>
 		<Route path="/">
-			<MainScreen/>
+			<MainScreen store={store}/>
 		</Route>
 		<Route path="settings">
 			<SettingsScreen/>

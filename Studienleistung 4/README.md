@@ -1,11 +1,11 @@
 # Aufgaben
 
--   Initial Setup + Router <- Lennart
--   API anbindung <- Lennart
--   Sortierung
+-   Initial Setup + Router <- Lennart - done
+-   API anbindung <- Lennart - done
+-   Sortierung - done
     -   Kapselung <- Lennart
-    -   Sortierungen <- Hendrik
--   Store krams <- Lennart
+    -   Sortierungen <- Hendrik - sorry
+-   Store krams <- Lennart - done
 -   UI Komponenten
     -   Panel <- Anne
     -   Aufklappbares ding <- Hendrik
