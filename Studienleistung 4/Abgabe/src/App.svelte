@@ -21,10 +21,10 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <Link to="/" class="nav-link">Home</Link>
+                        <Link to="/" class="nav-link">Übersicht</Link>
                     </li>
                     <li class="nav-item">
-                        <Link to="settings" class="nav-link">Settings</Link>
+                        <Link to="settings" class="nav-link">Einstellungen</Link>
                     </li>
                 </ul>
             </div>

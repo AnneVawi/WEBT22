@@ -1,6 +1,6 @@
 <script>
     import Accordion from "../components/Accordion.svelte";
-    import Kachel from "../components/Kachel.svelte"; 
+    import Card from "../components/Card.svelte";
     import { GroupSettings } from "../datalayer/Settings";
     import { onDestroy } from 'svelte'
 
@@ -14,13 +14,13 @@
 <h1 class="mb-4">Übersicht der Brandgefahr</h1>
 {#if $store.groupSetting === GroupSettings.TOWN}
    {#each data as detail}
-        <Kachel town={detail.town} level={detail.level}/>
+        <Card town={detail.town} level={detail.level}/>
     {/each}
 {:else}
      {#each data as item}
         <Accordion stateName={item.state}>
             {#each item.details as detail}
-                <Kachel town={detail.town} level={detail.level}/>
+                <Card town={detail.town} level={detail.level}/>
             {/each}
         </Accordion>
     {/each}
