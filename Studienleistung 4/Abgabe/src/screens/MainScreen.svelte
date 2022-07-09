@@ -11,7 +11,7 @@
     onDestroy(unsubscribe)
 </script>
 
-<h1>MainScreen</h1>
+<h1 class="mb-4">Übersicht der Brandgefahr</h1>
 {#if $store.groupSetting === GroupSettings.TOWN}
    {#each data as detail}
         <Kachel town={detail.town} level={detail.level}/>
