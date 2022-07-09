@@ -1,5 +1,5 @@
 <script>
-    import AusklappDings from "../components/AusklappDings.svelte";
+    import Accordion from "../components/Accordion.svelte";
     import Kachel from "../components/Kachel.svelte"; 
     import { GroupSettings } from "../datalayer/Settings";
     import { onDestroy } from 'svelte'
@@ -18,10 +18,10 @@
     {/each}
 {:else}
      {#each data as item}
-        <AusklappDings stateName={item.state}>
+        <Accordion stateName={item.state}>
             {#each item.details as detail}
                 <Kachel town={detail.town} level={detail.level}/>
             {/each}
-        </AusklappDings>
+        </Accordion>
     {/each}
 {/if}
