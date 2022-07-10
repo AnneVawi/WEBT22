@@ -11,7 +11,7 @@
 </script>
 
 <Router>
-    <nav class="navbar navbar-expand-lg bg-light border-bottom mb-4">
+    <nav class="navbar fixed-top navbar-expand-lg bg-light border-bottom mb-4">
         <div class="container-fluid">
             <span class="navbar-brand">Brandgefahr</span>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -40,6 +40,7 @@
         </Route>
     </div>
 </Router>
+
 
 <style>
 	:global(.nav-link[aria-current="page"]) { color: black; }

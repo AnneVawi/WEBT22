@@ -7,9 +7,9 @@
     -   Sortierungen <- Hendrik - sorry - Entschuldigung angenommen
 -   Store krams <- Lennart - done
 -   UI Komponenten
-    -   Panel <- Anne
+    -   Panel <- Anne done
     -   Aufklappbares ding <- Hendrik (done)
-    -   Nav <- Anne - sorry
+    -   Nav <- Anne - sorry - kein Ding
     -   Einstellungen <- Hendrik (done)
 
 ## Nächster Termin 11.7. 17:00

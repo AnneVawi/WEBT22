@@ -25,3 +25,14 @@
         </Accordion>
     {/each}
 {/if}
+
+<style>
+	h1 {
+		font-size: 50px;
+        background: -webkit-linear-gradient(blue, yellow, red);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+		padding-top: 70px;
+	}
+</style>
